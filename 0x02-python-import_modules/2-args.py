@@ -1,6 +1,8 @@
 #!/usr/bin/python3
 import sys
-def argv():
+
+if __name__ == "__main__":
+
     argv = sys.argv[1:]
     lenght = len(argv)
 
@@ -13,6 +15,3 @@ def argv():
         print('{:d} arguemnts:'.format(lenght))
         for i in range(len(argv)):
             print('{:d}: {:s}'.format(i + 1, sys.argv[i + 1]))
-
-if __name__ == "__main__":
-    argv()

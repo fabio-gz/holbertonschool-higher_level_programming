@@ -9,11 +9,25 @@ def roman_to_int(roman_string):
         'D': 500,
         'M': 1000,
     }
+
+    if not isinstance(roman_string, str) or not roman_string:
+        return 0
+
+    first = 0
+    last = 0
+    res = 0
     n = []
-    for key in ROMAN:
-        for letter in roman_string:
-            if letter in key:
-                n.append(ROMAN.get(key))
-            else:
-                pass
-    return sum(n)
+
+    for letter in roman_string:
+        n.append(ROMAN.get(letter))
+
+    if len(n) == 1:
+        return n[0]
+
+    for first, last in zip(n, n[1:]):
+        if first < last:
+            res = res - first
+        else:
+            res = res + first
+
+    return res + last

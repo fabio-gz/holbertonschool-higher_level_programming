@@ -13,7 +13,7 @@ class Node:
     @data.setter
     def data(self, value):
         """check correctness"""
-        if not isinstance(self.__data, int):
+        if not isinstance(value, int):
             raise TypeError('data must be an integer')
         else:
             self.__data = value

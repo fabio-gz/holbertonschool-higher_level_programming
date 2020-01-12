@@ -1,0 +1,48 @@
+===============================
+ How to Use 0-add_integer.py
+===============================
+
+The ''add_integer()'' function returns the sum of two numbers
+Numbers can be int or float
+
+Numbers
+=======
+
+::
+
+    >>> add_integer = __import__('0-add_integer').add_integer
+    >>> add_integer(1, 2)
+    3
+
+    >>> add_integer(-5, 8)
+    3
+
+::
+
+    >>> add_integer(1, 5.5)
+    6
+
+    >>> add_integer(2.2, 3.5)
+    5
+
+    >>> add_integer(9.8, 4)
+    13
+
+Non-Numbers
+===========
+
+Arguments for the function can only be int or float
+
+::
+
+    >>> add_integer(2, 'elton')
+    Traceback (most recent call last):
+    TypeError: b must be an integer
+
+    >>> add_integer('jhon', 3)
+    Traceback (most recent call last):
+    TypeError: a must be an integer
+
+    >>> add_integer(None)
+    Traceback (most recent call last):
+    TypeError: a must be an integer

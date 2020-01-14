@@ -1,0 +1,40 @@
+=================================
+ How to Use 5-text_indentation.py
+=================================
+
+The ''text_indentation()'' function print a text with indentation if there is
+'.', '?' or ':'
+
+Strings
+=======
+
+::
+
+    >>> text_indentation = __import__('5-text_indentation').text_indentation
+
+    >>> text_indentation('another, brick. in the wall? pink floyd')
+    another, brick.
+    <BLANKLINE>
+    in the wall?
+    <BLANKLINE>
+    pink floyd
+
+    >>> text_indentation('two:three')
+    two:
+    <BLANKLINE>
+    three
+
+    >>> text_indentation('')
+    
+
+
+Errors
+======
+
+    >>> text_indentation(42)
+    Traceback (most recent call last):
+    TypeError: text must be a string
+
+    >>> text_indentation(['pink', 'floyd'])
+    Traceback (most recent call last):
+    TypeError: text must be a string

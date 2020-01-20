@@ -1,0 +1,30 @@
+===============================
+ How to Use 1-my_list.py
+===============================
+
+The MyList class inherists from list and have a function to print a sorted list
+
+Numbers
+========
+::
+
+    >>> MyList = __import__('1-my_list').MyList
+
+    >>> my_list = MyList()
+    >>> my_list.append(2)
+    >>> my_list.append(12)
+    >>> my_list.append(2.4)
+    >>> my_list.append(-2)
+    >>> my_list.append(0)
+    >>> print(my_list)
+    [2, 12, 2.4, -2, 0]
+    >>> my_list.print_sorted()
+    [-2, 0, 2, 2.4, 12]
+
+Errors
+======
+
+    >>> my_list = MyList()
+    >>> my_list.append()
+    Traceback (most recent call last):
+    TypeError: append() takes exactly one argument (0 given)

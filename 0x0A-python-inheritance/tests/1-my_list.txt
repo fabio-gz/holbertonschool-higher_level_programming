@@ -20,6 +20,15 @@ Numbers
     [2, 12, 2.4, -2, 0]
     >>> my_list.print_sorted()
     [-2, 0, 2, 2.4, 12]
+    >>> print(my_list)
+    [2, 12, 2.4, -2, 0]
+
+    >>> list1 = MyList()
+    >>> list1.append(None)
+    >>> print(list1)
+    [None]
+    >>> list1.print_sorted()
+    [None]
 
 Errors
 ======

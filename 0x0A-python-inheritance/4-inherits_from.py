@@ -4,5 +4,5 @@ def inherits_from(obj, a_class):
     class"""
     if type(obj) is a_class:
         return False
-    elif issubclass(type(obj), a_class):
-        return True
+    else:
+        return isinstance(obj, a_class)

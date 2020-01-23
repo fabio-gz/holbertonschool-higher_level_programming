@@ -1,7 +1,9 @@
 #!/usr/bin/python3
 from models.base import Base
 
+
 class Rectangle(Base):
+    """class for Rectangle construction"""
     def __init__(self, width, height, x=0, y=0, id=None):
         self.width = width
         self.height = height
@@ -66,8 +68,15 @@ class Rectangle(Base):
         self.__y = value
 
     def area(self):
+        """returns rectangle area"""
         return self.__width * self.__height
 
     def display(self):
+        """print rectangle"""
         for i in range(self.__height):
             print('#' * self.__width)
+
+    def __str__(self):
+        return ('[Rectangle] ({}) {}/{} - {}/{}'.format(self.id, self.__x,
+                                                        self.__y, self.__width,
+                                                        self.__height))

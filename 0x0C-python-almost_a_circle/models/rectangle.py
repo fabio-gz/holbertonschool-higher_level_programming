@@ -86,6 +86,7 @@ class Rectangle(Base):
                                                         self.__height))
 
     def update(self, *args, **kwargs):
+        """implementation of args and kwargs"""
         attr = ['id', 'width', 'height', 'x', 'y']
         if args is not None and len(args) != 0:
             for i in range(len(args)):
@@ -93,3 +94,8 @@ class Rectangle(Base):
         if kwargs is not None:
             for key, value in kwargs.items():
                 setattr(self, key, value)
+
+    def to_dictionary(self):
+        """return dict representation of Rectangle"""
+        return {'id': self.id, 'width': self.width, 'height': self.height,
+                'x': self.x, 'y': self.y}

@@ -30,7 +30,7 @@ class Rectangle(Base):
         """retrieve the height"""
         return self.__height
 
-    @width.setter
+    @height.setter
     def height(self, value):
         """setter func for height"""
         if not isinstance(value, int):
@@ -44,7 +44,7 @@ class Rectangle(Base):
         """retrieve the x"""
         return self.__x
 
-    @width.setter
+    @x.setter
     def x(self, value):
         """setter func for x"""
         if not isinstance(value, int):
@@ -56,9 +56,9 @@ class Rectangle(Base):
     @property
     def y(self):
         """retrieve the x"""
-        return self.y
+        return self.__y
 
-    @width.setter
+    @y.setter
     def y(self, value):
         """setter func for x"""
         if not isinstance(value, int):

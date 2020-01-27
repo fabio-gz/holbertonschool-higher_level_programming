@@ -1,17 +1,18 @@
 #!/usr/bin/python3
-
-import json
 """
 Base class for all the other classes in this project
 """
+import json
 
 
 class Base:
-    """Base clase for figures"""
+    """Base clase for figures
+    """
     __nb_objects = 0
 
     def __init__(self, id=None):
-        """initial function"""
+        """initial function
+        """
         if id is not None:
             self.id = id
         else:
@@ -20,7 +21,8 @@ class Base:
 
     @staticmethod
     def to_json_string(list_dictionaries):
-        """convert to json string"""
+        """convert to json string
+        """
         if list_dictionaries is None or len(list_dictionaries) == 0:
             return '[]'
         else:
@@ -28,7 +30,8 @@ class Base:
 
     @classmethod
     def save_to_file(cls, list_objs):
-        """writes de json representation of lists_objs"""
+        """writes de json representation of lists_objs
+        """
         list1 = []
         filename = cls.__name__ + '.json'
         with open(filename, mode='w', encoding='UTF-8') as f:
@@ -42,7 +45,8 @@ class Base:
 
     @staticmethod
     def from_json_string(json_string):
-        """returns the list of the json string representation"""
+        """returns the list of the json string representation
+        """
         if json_string is None or len(json_string) == 0:
             return []
         else:
@@ -50,7 +54,8 @@ class Base:
 
     @classmethod
     def create(cls, **dictionary):
-        """returns an insrance with all attributes already set"""
+        """returns an insrance with all attributes already set
+        """
         if cls.__name__ == 'Rectangle':
             dummy = cls(1, 1)
             dummy.update(**dictionary)
@@ -62,7 +67,8 @@ class Base:
 
     @classmethod
     def load_from_file(cls):
-        """ return a list of instances"""
+        """ return a list of instances
+        """
         filename = cls.__name__ + '.json'
         list1 = []
         if filename is None:

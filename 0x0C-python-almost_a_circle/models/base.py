@@ -20,6 +20,7 @@ class Base:
 
     @staticmethod
     def to_json_string(list_dictionaries):
+        """convert to json string"""
         if list_dictionaries is None or len(list_dictionaries) == 0:
             return '[]'
         else:

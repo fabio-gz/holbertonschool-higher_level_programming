@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+
 import json
 """
 Base class for all the other classes in this project
@@ -6,6 +7,7 @@ Base class for all the other classes in this project
 
 
 class Base:
+    """Base clase for figures"""
     __nb_objects = 0
 
     def __init__(self, id=None):

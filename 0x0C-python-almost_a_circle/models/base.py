@@ -71,7 +71,7 @@ class Base:
         """
         filename = cls.__name__ + '.json'
         list1 = []
-        if filename is None:
+        if filename is None and len(filename) == 0:
             return list1
         else:
             with open(filename, encoding='UTF-8') as f:

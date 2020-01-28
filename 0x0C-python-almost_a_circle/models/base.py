@@ -72,7 +72,7 @@ class Base:
         filename = cls.__name__ + '.json'
         list1 = []
         if filename is None:
-            return '[]'
+            return list1
         else:
             with open(filename, encoding='UTF-8') as f:
                 for arg in cls.from_json_string(f.read()):

@@ -10,6 +10,10 @@ from models.rectangle import Rectangle
 class test_rectangle(unittest.TestCase):
     """test cases for class Rectangle"""
 
+    def setUp(self):
+        """run method prior test"""
+        Base._Base__nb_objects = 0
+
     def test_twoargs(self):
         """test for two args"""
         r2 = Rectangle(1, 2)

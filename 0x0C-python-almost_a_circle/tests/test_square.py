@@ -11,6 +11,10 @@ from models.square import Square
 class test_square(unittest.TestCase):
     """test cases for class Square"""
 
+    def setUp(self):
+        """run method prior test"""
+        Base._Base__nb_objects = 0
+
     def test_twoargs(self):
         """test for two args"""
         s1 = Square(5, 6)

@@ -9,6 +9,10 @@ from models.base import Base
 class test_base(unittest.TestCase):
     """tester for base class"""
 
+    def setUp(self):
+        """run method prior test"""
+        Base._Base__nb_objects = 0
+
     def test_int(self):
         """test for one int"""
         b1 = Base(3)

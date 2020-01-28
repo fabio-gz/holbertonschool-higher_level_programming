@@ -74,7 +74,7 @@ class Base:
         if not filename:
             return list1
         else:
-            with open(filename, encoding='UTF-8') as f:
+            with open(filename, mode='r', encoding='UTF-8') as f:
                 for arg in cls.from_json_string(f.read()):
                     list1.append(cls.create(**arg))
                 return list1

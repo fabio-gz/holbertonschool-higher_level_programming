@@ -77,4 +77,4 @@ class Base:
             with open(filename, encoding='UTF-8') as f:
                 for arg in cls.from_json_string(f.read()):
                     list1.append(cls.create(**arg))
-                return list1
+            return list1

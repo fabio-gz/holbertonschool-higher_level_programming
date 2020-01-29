@@ -67,14 +67,12 @@ class Base:
 
     @classmethod
     def load_from_file(cls):
-        """ return a list of instances
-        """
+        ''' return a list of instances
+        '''
         filename = cls.__name__ + '.json'
-        list1 = []
-        if not filename:
-            return list1
-        else:
+        try:
             with open(filename, mode='r', encoding='UTF-8') as f:
-                for arg in cls.from_json_string(f.read()):
-                    list1.append(cls.create(**arg))
-                return list1
+                r1 = cls.from_json_string(f.read())
+                return [cls.create(**args) for args in r1]
+        except:
+            return []

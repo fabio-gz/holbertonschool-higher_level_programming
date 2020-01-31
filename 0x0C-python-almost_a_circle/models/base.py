@@ -3,6 +3,7 @@
 Base class for all the other classes in this project
 """
 import json
+import csv
 
 
 class Base:
@@ -76,3 +77,42 @@ class Base:
                 return [cls.create(**args) for args in r1]
         except:
             return []
+
+    @classmethod
+    def save_to_file_csv(cls, list_objs):
+        """serializes in csv"""
+        filename = cls.__name__ + '.csv'
+        lclass = []
+        values = []
+        classes = 0
+        for i in range(len(list_objs)):
+            values.append([])
+            d = list_objs[i].to_dictionary()
+            if classes == 0:
+                for j in d:
+                    lclass.append(j)
+                classes = 1
+        with open(filename, mode='w', newline='', encoding='UTF-8') as f:
+            writer = csv.DictWriter(f, fieldnames=lclass)
+
+            writer.writeheader()
+            for i in range(len(list_objs)):
+                d = list_objs[i].to_dictionary()
+                writer.writerow(d)
+
+    @classmethod
+    def load_from_file_csv(cls):
+        """deserialize in csv"""
+        filename = cls.__name__ + '.csv'
+        d_csv = {}
+        lvalues = []
+        try:
+            with open(filename, mode='r', encoding='UTF-8') as f:
+                reader = csv.DictReader(f)
+                for i in reader:
+                    for j in i:
+                        d_csv[j] = int(i[j])
+                    lvalues.append(cls.create(**d_csv))
+                return lvalues
+        except:
+            return lvalues

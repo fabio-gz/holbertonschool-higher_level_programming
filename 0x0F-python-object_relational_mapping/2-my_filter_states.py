@@ -13,9 +13,10 @@ if __name__ == '__main__':
     cursor.execute("SELECT * FROM states WHERE name='{}' "
                    " COLLATE Latin1_General_cs ORDER BY states.id ASC"
                    .format(agmt))
-    result = cursor.fetchone()
+    result = cursor.fetchall()
 
-    print(result)
+    for i in result:
+        print(i)
 
     cursor.close()
     db.close()

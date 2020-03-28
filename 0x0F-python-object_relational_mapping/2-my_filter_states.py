@@ -10,8 +10,9 @@ if __name__ == '__main__':
                          passwd=sys.argv[2], db=sys.argv[3])
 
     cursor = db.cursor()
-    cursor.execute("SELECT * FROM states WHERE name='{}' ORDER BY"
-                   " states.id ASC".format(agmt))
+    cursor.execute("SELECT * FROM states WHERE name='{}' "
+                   " COLLATE Latin1_General_cs ORDER BY states.id ASC"
+                   .format(agmt))
     result = cursor.fetchone()
 
     print(result)

@@ -4,9 +4,16 @@ const leng = process.argv.length;
 if (leng === 3 || isNaN(process.argv[2])) {
   console.log(0);
 } else {
-  let bigg = process.argv[1];
-  let sbigg = process.argv[0];
-  for (let i = 2; i < leng; i++) {
+  let bigg;
+  let sbigg;
+  if (process.argv[2] < process.argv[3]) {
+    bigg = process.argv[3];
+    sbigg = process.argv[2];
+  } else {
+    bigg = process.argv[2];
+    sbigg = process.argv[3];
+  }
+  for (let i = 4; i < leng; i++) {
     if (process.argv[i] > bigg) {
       sbigg = bigg;
       bigg = process.argv[i];

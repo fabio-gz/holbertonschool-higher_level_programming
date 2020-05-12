@@ -2,7 +2,6 @@
 const request = require('request');
 
 const url = process.argv[2];
-const wedge = "https://swapi-api.hbtn.io/api/people/18/";
 
 const numfilms = function (err, response, body) {
   if (err) {
@@ -10,6 +9,7 @@ const numfilms = function (err, response, body) {
   } else {
     const dat = JSON.parse(body).results;
     let num = 0;
+    const wedge = 'https://swapi-api.hbtn.io/api/people/18/';
     for (const i of dat) {
       for (const j of i.characters) {
         if (j === wedge) {
